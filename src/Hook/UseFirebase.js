@@ -13,9 +13,9 @@ const useFirebase=()=>{
     const gooleSingn=()=>{
         signInWithPopup(auth, googlProvider)
         .then((result) => {
-          console.log(result.user)
+        
           setUser(result.user)
-        //   history.push(url);
+        
           })
          
     }

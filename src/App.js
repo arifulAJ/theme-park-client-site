@@ -8,6 +8,9 @@ import NavigationBar from './Pages/Header/NavigationBar/NavigationBar';
 import PlaceOrder from './Pages/PlaceOrder/PlaceOrder';
 import Privet from './Pages/privetRoute/Privet';
 import SignUp from './Pages/SignUp/SignUp';
+import Service from './Pages/Service/Service';
+import About from './Pages/About/About';
+import NotFoudn from './Pages/NotFound/NotFoudn';
 
 function App() {
   return (
@@ -25,8 +28,17 @@ function App() {
    <Privet path='/placeOrder/:orderId'>
      <PlaceOrder></PlaceOrder>
    </Privet>
+   <Route path='/service'>
+   <Service></Service>
+   </Route>
+   <Route path='/about'>
+     <About></About>
+   </Route>
    <Route path='/login'>
    <SignUp></SignUp>
+   </Route>
+   <Route path='*'>
+     <NotFoudn></NotFoudn>
    </Route>
 </Switch>
 <Footer></Footer>

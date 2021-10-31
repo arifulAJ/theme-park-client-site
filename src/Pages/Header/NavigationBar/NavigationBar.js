@@ -17,10 +17,10 @@ const NavigationBar = () => {
           <Link to='/home' className="nav-link active" aria-current="page" href="#">Home</Link>
         </li>
         <li className="nav-item">
-          <Link to='/home' className="nav-link active" aria-current="page" href="#">Home</Link>
+          <Link to='/service' className="nav-link active" aria-current="page" href="#">service</Link>
         </li>
         <li className="nav-item">
-          <Link to='/home' className="nav-link active" aria-current="page" href="#">Home</Link>
+          <Link to='/about' className="nav-link active" aria-current="page" href="#">about</Link>
         </li>
         <li className="nav-item">
           <Link to='/home' className="nav-link active" aria-current="page" href="#">Home</Link>

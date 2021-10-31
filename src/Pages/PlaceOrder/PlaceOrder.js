@@ -1,19 +1,27 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 
+
+
 const PlaceOrder = () => {
+      const [place,setPlace]=useState([])
     const {orderId}=useParams();
     console.log(orderId);
+    console.log(place)
 useEffect(()=>{
-    const url=`https://jsonplaceholder.typicode.com/users/${orderId}`
+    const url=`https://shielded-brushlands-87439.herokuapp.com/products/${orderId}`
     console.log(url)
     fetch(url)
     .then(res=>res.json())
-    .then(data=>console.log(data))
+    .then(data=>setPlace(data))
 },[])
     return (
         <div>
-            <h1>order your items</h1>
+
+            <h1>friend details:{orderId}</h1>
+            <h4>Ride name: {place.title}</h4>
+         <img src={place.imgUrl} alt="not found" />
+         
         </div>
     );
 };
