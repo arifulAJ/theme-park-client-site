@@ -9,9 +9,9 @@ import useAuth from '../../constext/useAuth';
 
 
 const SignUp = () => {
-    const {user,googleSignIn,signOutAt,handelEmail,handelPassword,handelSignup}=useAuth();
+    const {user,setUser,googleSignIn,signOutAt,handelEmail,handelPassword,handelSignup}=useAuth();
     const history=useHistory();
-    const [users,setUsers]=useState({})
+    // const [users,setUsers]=useState([])
     const location=useLocation();
     const uri=location.state?.form||'/home'
    
@@ -20,7 +20,7 @@ const SignUp = () => {
         googleSignIn()
           .then((result) => {
         
-            setUsers(result.user)
+            setUser(result.user)
           history.push(uri)
           })
 
@@ -37,7 +37,7 @@ const SignUp = () => {
            
             <button  onClick={handelGoogleIn} className="btn btn-danger">Sign with google </button><br /><br />
             <button onClick={signOutAt} className="btn btn-danger">log out </button>
-            <h6 className="pt-5">email:{users.email}</h6>
+            <h6 className="pt-5">email:{user.email}</h6>
             <h6 className="pt-5">email:{user.email}</h6>
         </div>
         <div className="text-center pt-5 mt-5 ">

@@ -66,7 +66,7 @@ const signOutAt=()=>{
         handelEmail,
         handelSignup,
         handelPassword,
-        handelSignIn
+        handelSignIn,setUser
 
     }
 }
