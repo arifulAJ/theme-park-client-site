@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../constext/useAuth';
+import './navigation.css'
 
 const NavigationBar = () => {
   const{user,signOutAt}=useAuth()
     return (
-        <div>
+        <div className="dinamik" >
             
 <nav className="navbar navbar-expand-lg navbar-light bg-light">
   <div className="container-fluid">
@@ -25,19 +26,25 @@ const NavigationBar = () => {
           <Link to='/about' className="nav-link active" aria-current="page" href="#">about</Link>
         </li>
         <li className="nav-item">
-          <Link to='/home' className="nav-link active" aria-current="page" href="#">Home</Link>
+       <Link to='/signup'>   <button className="btn btn-danger"> sign up</button></Link>
         </li>
         
       </ul>
       <span className="navbar-text">
-
+    
+    
  { user.email?
- <button className="btn btn-danger" onClick={signOutAt} > Log out</button>:
+<div className=" ">
+<Link style={{padding:"10px,",textDecoration:"none",border:"1px solid"}}  to='/order'   > My Orders</Link>
+<Link style={{paddingRight:"100px,",textDecoration:"none", border:"1px solid"}}  to='/manageOrder' >Manage All Orders</Link>
+<Link style={{paddingLeft:"10px,",textDecoration:"none",border:"1px solid"}}  to='/addService'  > Add A New Service</Link>
+<button style={{paddingRight:"10px,",textDecoration:"none",border:"1px solid"}}  className="btn btn-danger" onClick={signOutAt} > Log out</button>
+</div> :
  
  <Link to='/signin'>   <button className="btn btn-danger"> Log in</button></Link>}
 
-  <Link to='/signup'>   <button className="btn btn-danger"> sign up</button></Link>
-      </span>
+  
+</span>
     </div>
   </div>
 </nav>

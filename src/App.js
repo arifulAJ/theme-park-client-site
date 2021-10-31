@@ -13,6 +13,9 @@ import About from './Pages/About/About';
 import NotFoudn from './Pages/NotFound/NotFoudn';
 import Signin from './Pages/SignUp/Signin/Signin';
 import UserDetail from './Pages/PlaceOrder/UsersDatiels/UserDetail';
+import MyOrder from './Pages/SignUp/MYOrder/MyOrder';
+import ManageOrder from './Pages/SignUp/MangeOrder/ManageOrder';
+import AdNew from './Pages/SignUp/AdNew/AdNew';
 
 function App() {
   return (
@@ -41,6 +44,15 @@ function App() {
    </Route>
    <Route path='/signin'>
      <Signin></Signin>
+   </Route>
+   <Route path='/order'>
+     <MyOrder></MyOrder>
+   </Route>
+   <Route path='/manageOrder'>
+     <ManageOrder></ManageOrder>
+   </Route>
+   <Route path='/addService'>
+   <AdNew></AdNew>
    </Route>
    <Route path='/users/:id'>
      <UserDetail></UserDetail>

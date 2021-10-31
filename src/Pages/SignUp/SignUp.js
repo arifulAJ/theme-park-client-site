@@ -8,6 +8,7 @@ import useAuth from '../../constext/useAuth';
 
 
 
+
 const SignUp = () => {
     const {user,setUser,googleSignIn,signOutAt,handelEmail,handelPassword,handelSignup}=useAuth();
     const history=useHistory();
@@ -28,7 +29,7 @@ const SignUp = () => {
    
     
     return (
-        <div>
+        <div className="sig">
                <h1 className="text-center bolder ">Login with your email and password</h1>
                <div className="row row-cols-lg-2 row-cols-1 container" >
         
@@ -37,8 +38,8 @@ const SignUp = () => {
            
             <button  onClick={handelGoogleIn} className="btn btn-danger">Sign with google </button><br /><br />
             <button onClick={signOutAt} className="btn btn-danger">log out </button>
-            <h6 className="pt-5">email:{user.email}</h6>
-            <h6 className="pt-5">email:{user.email}</h6>
+            
+            <h6 className="pt-5">Email : {user.email}</h6>
         </div>
         <div className="text-center pt-5 mt-5 ">
           <form onSubmit={handelSignup}>

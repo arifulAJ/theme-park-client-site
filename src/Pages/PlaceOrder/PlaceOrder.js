@@ -18,6 +18,7 @@ useEffect(()=>{
 },[])
     return (
         <div>
+          <h1 className="text-center pt-5 pb-5">Thank you for parches our service</h1>
      <div class="card mb-3 container">
   <img src={place.imgUrl} class="card-img-top" alt="..."/>
   <div class="card-body">
