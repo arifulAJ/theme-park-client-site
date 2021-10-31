@@ -13,8 +13,8 @@ const SignUp = () => {
     const history=useHistory();
     const [users,setUsers]=useState({})
     const location=useLocation();
-    const uri=location?.state?.form||'/home'
-    // const uri_sin=location.state?from||'/home'
+    const uri=location.state?.form||'/home'
+   
   
     const handelGoogleIn=()=>{
         googleSignIn()
