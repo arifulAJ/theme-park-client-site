@@ -1,22 +1,42 @@
 import { useEffect, useState } from "react"
-import { GoogleAuthProvider,getAuth, signInWithPopup,onAuthStateChanged,signOut   } from "firebase/auth";
+import { GoogleAuthProvider,getAuth, signInWithPopup,onAuthStateChanged,signOut ,createUserWithEmailAndPassword,signInWithEmailAndPassword    } from "firebase/auth";
 import fireBaseInstillationApp from "../Pages/Firebase/firebase.init";
-import { useHistory, useLocation } from "react-router";
+
 const googlProvider = new GoogleAuthProvider();
 fireBaseInstillationApp()
 const useFirebase=()=>{
     const [user,setUser]=useState([]);
-    //  const history=useHistory();
-    //  const location=useLocation();
-    //  const url=location.state?.form ||'/home'
+    
     const auth = getAuth();
-    const gooleSingn=()=>{
-        signInWithPopup(auth, googlProvider)
+    const [email,setEmail]=useState([]);
+    const [password,setPassword]=useState([]);
+    const handelEmail=e=>{
+        setEmail(e.target.value)
+    }
+    const handelPassword=e=>{
+        setPassword(e.target.value);
+      
+    }
+    const handelSignup=e=>{
+        e.preventDefault();
+        createUserWithEmailAndPassword(auth, email, password)
         .then((result) => {
-        
-          setUser(result.user)
-        
+            setUser(result.user)
+          
           })
+
+    }
+    const handelSignIn=e=>{
+        e.preventDefault();
+     signInWithEmailAndPassword(auth, email, password)
+  .then((result) => {
+   setUser(result.user)
+ 
+  })
+    }
+    const googleSignIn=()=>{
+      return  signInWithPopup(auth, googlProvider)
+        
          
     }
     useEffect(()=>{
@@ -28,7 +48,7 @@ const useFirebase=()=>{
 
 
 
-const signOutat=()=>{
+const signOutAt=()=>{
     signOut(auth)
     .then(() => {
       setUser({})
@@ -36,7 +56,12 @@ const signOutat=()=>{
 }
 
     return{user,
-        gooleSingn,signOutat
+        googleSignIn,
+        signOutAt,
+        handelEmail,
+        handelSignup,
+        handelPassword,
+        handelSignIn
 
     }
 }

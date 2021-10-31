@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../constext/useAuth';
 
 const NavigationBar = () => {
+  const{user,signOutAt}=useAuth()
     return (
         <div>
             
@@ -28,7 +30,13 @@ const NavigationBar = () => {
         
       </ul>
       <span className="navbar-text">
-  <Link to='/login'>   <button className="btn btn-danger"> login</button></Link>
+
+ { user.email?
+ <button className="btn btn-danger" onClick={signOutAt} > Log out</button>:
+ 
+ <Link to='/signin'>   <button className="btn btn-danger"> Log in</button></Link>}
+
+  <Link to='/signup'>   <button className="btn btn-danger"> sign up</button></Link>
       </span>
     </div>
   </div>

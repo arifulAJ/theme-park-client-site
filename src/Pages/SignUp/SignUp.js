@@ -1,21 +1,57 @@
 import React from 'react';
-import { useHistory } from 'react-router';
+import { useHistory, useLocation } from 'react-router';
+import { Link } from 'react-router-dom';
+import { useState } from 'react/cjs/react.development';
 import useAuth from '../../constext/useAuth';
-import useFirebase from '../../Hook/UseFirebase';
+
 
 
 
 
 const SignUp = () => {
-    const {user,gooleSingn,signOutat}=useAuth();
+    const {user,googleSignIn,signOutAt,handelEmail,handelPassword,handelSignup}=useAuth();
+    const history=useHistory();
+    const [users,setUsers]=useState({})
+    const location=useLocation();
+    const uri=location?.state?.form||'/home'
+    // const uri_sin=location.state?from||'/home'
+  
+    const handelGoogleIn=()=>{
+        googleSignIn()
+          .then((result) => {
+        
+            setUsers(result.user)
+          history.push(uri)
+          })
+
+    }
+   
     
     return (
-        <div className="text-center p-5 m-5"> 
-            <h6>name:{user.displayName}</h6>
-            <h6>email:{user.email}</h6>
-        <button  onClick={gooleSingn} className="btn btn-danger">Sign with google </button><br /><br />
-        <button onClick={signOutat} className="btn btn-danger">log out </button>
+        <div>
+               <h1 className="text-center bolder ">Login with your email and password</h1>
+               <div className="row row-cols-lg-2 row-cols-1 container" >
+        
+        <div className="text-center pt-5 mt-5  "> 
+           
+           
+            <button  onClick={handelGoogleIn} className="btn btn-danger">Sign with google </button><br /><br />
+            <button onClick={signOutAt} className="btn btn-danger">log out </button>
+            <h6 className="pt-5">email:{users.email}</h6>
+            <h6 className="pt-5">email:{user.email}</h6>
         </div>
+        <div className="text-center pt-5 mt-5 ">
+          <form onSubmit={handelSignup}>
+           <input className="p-1 m-2" onBlur={handelEmail} type="email" placeholder="enter your email" /><br />
+            <input className="p-1 m-2" onBlur={handelPassword} type="password" placeholder="enter your password" /><br />
+            <input className="btn btn-danger mt-3" type="submit" value="sign Up" />
+          </form>
+        </div>
+        <h6 className="text-center">Already have an account: <Link to='/signin'>sign In</Link> </h6>
+       </div>
+
+        </div>
+      
     );
 };
 

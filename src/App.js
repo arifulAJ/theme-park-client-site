@@ -11,6 +11,8 @@ import SignUp from './Pages/SignUp/SignUp';
 import Service from './Pages/Service/Service';
 import About from './Pages/About/About';
 import NotFoudn from './Pages/NotFound/NotFoudn';
+import Signin from './Pages/SignUp/Signin/Signin';
+import UserDetail from './Pages/PlaceOrder/UsersDatiels/UserDetail';
 
 function App() {
   return (
@@ -34,8 +36,14 @@ function App() {
    <Route path='/about'>
      <About></About>
    </Route>
-   <Route path='/login'>
+   <Route path='/signup'>
    <SignUp></SignUp>
+   </Route>
+   <Route path='/signin'>
+     <Signin></Signin>
+   </Route>
+   <Route path='/users/:id'>
+     <UserDetail></UserDetail>
    </Route>
    <Route path='*'>
      <NotFoudn></NotFoudn>
