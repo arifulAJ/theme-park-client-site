@@ -11,34 +11,34 @@ const useFirebase=()=>{
    
     
     const auth = getAuth();
-    const [email,setEmail]=useState([]);
-    const [password,setPassword]=useState([]);
-    const handelEmail=e=>{
-        setEmail(e.target.value)
-    }
-    const handelPassword=e=>{
-        setPassword(e.target.value);
+//     const [email,setEmail]=useState([]);
+//     const [password,setPassword]=useState([]);
+//     const handelEmail=e=>{
+//         setEmail(e.target.value)
+//     }
+//     const handelPassword=e=>{
+//         setPassword(e.target.value);
       
-    }
-    const handelSignup=e=>{
-        e.preventDefault();
-        createUserWithEmailAndPassword(auth, email, password)
-        .then((result) => {
-            setUser(result.user)
+//     }
+//     const handelSignup=e=>{
+//         e.preventDefault();
+//         createUserWithEmailAndPassword(auth, email, password)
+//         .then((result) => {
+//             setUser(result.user)
             
           
-          })
+//           })
 
-    }
-    const handelSignIn=e=>{
-        e.preventDefault();
-     signInWithEmailAndPassword(auth, email, password)
-  .then((result) => {
-   setUser(result.user);
+//     }
+//     const handelSignIn=e=>{
+//         e.preventDefault();
+//      signInWithEmailAndPassword(auth, email, password)
+//   .then((result) => {
+//    setUser(result.user);
 
  
-  })
-    }
+//   })
+    // }
     const googleSignIn=()=>{
       return  signInWithPopup(auth, googlProvider)
         
@@ -63,11 +63,11 @@ const signOutAt=()=>{
     return{user,
         googleSignIn,
         signOutAt,
-        handelEmail,
-        handelSignup,
-        handelPassword,
-        handelSignIn,setUser
-
+        // handelEmail,
+        // handelSignup,
+        // handelPassword,
+        // handelSignIn,setUser
+        setUser
     }
 }
 export default useFirebase;

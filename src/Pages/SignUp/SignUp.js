@@ -10,11 +10,11 @@ import useAuth from '../../constext/useAuth';
 
 
 const SignUp = () => {
-    const {user,setUser,googleSignIn,signOutAt,handelEmail,handelPassword,handelSignup}=useAuth();
+    const {user,setUser,googleSignIn,signOutAt}=useAuth();
     const history=useHistory();
     // const [users,setUsers]=useState([])
     const location=useLocation();
-    const uri=location.state?.form||'/home'
+    const uri=location.state?.from||'/placeOrder/:orderId'
    
   
     const handelGoogleIn=()=>{
@@ -31,7 +31,7 @@ const SignUp = () => {
     return (
         <div className="sig">
                <h1 className="text-center bolder ">Login with your email and password</h1>
-               <div className="row row-cols-lg-2 row-cols-1 container" >
+               <div className="row row-cols-lg-1 row-cols-1 container" >
         
         <div className="text-center pt-5 mt-5  "> 
            
@@ -41,14 +41,14 @@ const SignUp = () => {
             
             <h6 className="pt-5">Email : {user.email}</h6>
         </div>
-        <div className="text-center pt-5 mt-5 ">
+        {/* <div className="text-center pt-5 mt-5 ">
           <form onSubmit={handelSignup}>
            <input className="p-1 m-2" onBlur={handelEmail} type="email" placeholder="enter your email" /><br />
             <input className="p-1 m-2" onBlur={handelPassword} type="password" placeholder="enter your password" /><br />
             <input className="btn btn-danger mt-3" type="submit" value="sign Up" />
           </form>
-        </div>
-        <h6 className="text-center">Already have an account: <Link to='/signin'>sign In</Link> </h6>
+        </div> */}
+        {/* <h6 className="text-center">Already have an account: <Link to='/signin'>sign In</Link> </h6> */}
        </div>
 
         </div>

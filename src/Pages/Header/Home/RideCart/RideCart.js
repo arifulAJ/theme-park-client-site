@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Cart from './Cart/Cart';
 
 const RideCart = () => {
-   
+    // https://shielded-brushlands-87439.herokuapp.com/products
     const [rides,setRides]=useState([]);
     useEffect(()=>{
         fetch('https://shielded-brushlands-87439.herokuapp.com/products')

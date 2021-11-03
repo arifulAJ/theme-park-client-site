@@ -1,0 +1,14 @@
+.addSer form{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+.addSer form ,input{
+    width: 40%;
+}
+.addSer form ,textarea{
+    width: 40%;
+}

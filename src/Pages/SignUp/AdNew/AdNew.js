@@ -1,26 +1,31 @@
 import React from 'react';
-
+import useAuth from '../../../constext/useAuth';
+import { useForm } from "react-hook-form";
+import './AddNew.css'
+import axios from 'axios';
 const AdNew = () => {
-    return (
-        <div className="text-center pt-5 pb-5">
-            <h1>Add new user</h1>
-            <p>who are intersect to visited  the national park you can visit out website to get by two one free </p>
-            <div class="card mb-3" style={{maxWidth:" 940px"}}>
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="https://ak-d.tripcdn.com/images/1002190000018dzcd964F_Z_640_10000_R5.jpg" class="img-fluid rounded-start" alt="..."/>
+  const {user}=useAuth()
+  const { register, handleSubmit } = useForm();
+  const onSubmit = data => {
+    console.log(data);
+  axios.post('https://shielded-brushlands-87439.herokuapp.com/products',data)
+  .then(res=>{
+    console.log(res)
+  })
+  }
+  return (
+    <div className="addSer pt-5">
+      <h1 style={{textAlign:'center'}}>Add new service holder  </h1>
+      <h6 style={{textAlign:'center',paddingBottom:'10px'}}>user: {user.email}</h6>
+      <form onSubmit={handleSubmit(onSubmit)}>
+      <input {...register("img")} placeholder="image" />
+      <input {...register("firstName")}  placeholder="name"/>
+      <textarea {...register("description", )} placeholder="description" />
+      <input type="number" {...register("price" )} placeholder="price" />
+      <input type="submit" />
+    </form>
     </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">play with monster</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-  </div>
-</div>
-        </div>
-    );
+  );
 };
 
 export default AdNew;

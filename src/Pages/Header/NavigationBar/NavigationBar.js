@@ -25,9 +25,7 @@ const NavigationBar = () => {
         <li className="nav-item">
           <Link to='/about' className="nav-link active" aria-current="page" href="#">about</Link>
         </li>
-        <li className="nav-item">
-       <Link to='/signup'>   <button className="btn btn-danger"> sign up</button></Link>
-        </li>
+        
         
       </ul>
       <span className="navbar-text">
@@ -40,11 +38,13 @@ const NavigationBar = () => {
 <Link style={{paddingLeft:"10px,",textDecoration:"none",border:"1px solid"}}  to='/addService'  > Add A New Service</Link>
 <button style={{paddingRight:"10px,",textDecoration:"none",border:"1px solid"}}  className="btn btn-danger" onClick={signOutAt} > Log out</button>
 </div> :
- 
- <Link to='/signin'>   <button className="btn btn-danger"> Log in</button></Link>}
+  
+  <Link to='/signup'>   <button className="btn btn-danger"> sign up</button></Link>
+   }
+{/* //  <Link to='/signin'>   <button className="btn btn-danger"> Log in</button></Link>} */}
 
   
-</span>
+ </span>
     </div>
   </div>
 </nav>
