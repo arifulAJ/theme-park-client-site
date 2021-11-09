@@ -12,8 +12,19 @@ const PlaceOrder = () => {
 console.log(place)
 const {user}=useAuth()
 const nameRef=useRef()
-const handelUser=e=>{
+const handelUser=(e,data)=>{
   e.preventDefault()
+  fetch('https://shielded-brushlands-87439.herokuapp.com/controlOrder',{
+    method:"POST",
+    headers:{
+      'content-type':'application/json'
+    },
+    body:JSON.stringify(data)
+  })
+  .then(res=>res.json())
+  .then(result=>{
+    console.log(result)
+  })
  
 }
 console.log(user)
@@ -37,11 +48,12 @@ useEffect(()=>{
 </div>
 
 <form onSubmit={handelUser} className='text-center p-5'>
-  <input  type="text" value={user.displayName}/><br />
-  <input className='my-2 ' type="email" value={user.email} /><br />
+  <input  type="text" value={place.title}/><br />
+  <textarea className='my-2 ' type="text" value={place.description} /><br />
   <input className='my-2 ' type="text" placeholder="write your house address" /><br />
+  <input className='my-2 ' type="text" placeholder={place.price} /><br />
  
-  <Link  to={`/users/${place._id}` }><button className="btn btn-danger">OrderPerch</button></Link>
+  <Link type="submit"  to={`/users/${place._id}` }><button className="btn btn-danger">OrderPerch</button></Link>
 </form>
          
         </div>

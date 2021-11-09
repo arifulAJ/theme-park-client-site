@@ -22,6 +22,7 @@ const SignUp = () => {
           .then((result) => {
         
             setUser(result.user)
+            localStorage.setItem("email",result.user.email)
           history.push(uri)
           })
 

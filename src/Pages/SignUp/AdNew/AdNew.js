@@ -28,7 +28,7 @@ const AdNew = () => {
       <h6 style={{textAlign:'center',paddingBottom:'10px'}}>user: {user.email}</h6>
       <form onSubmit={handleSubmit(onSubmit)}>
       <input {...register("imgUrl")} placeholder="image url" />
-      <input {...register("firstName")}  placeholder="name"/>
+      <input {...register("title")}  placeholder="name"/>
       <textarea {...register("description", )} placeholder="description" />
       <input type="number" {...register("price" )} placeholder="price" />
       <input type="submit" />
