@@ -1,5 +1,5 @@
 # Website mockup with different devices
-<img src="https://i.ibb.co/2KW8BkZ/download-1.png" />
+<img src="https://i.ibb.co/wyRFf4R/fantasy.png" />
 
 
 
@@ -18,16 +18,15 @@
 
 
 ## user experience by exploring this web
-<li>user can buy car </li>
+<li>user can buy ride </li>
 <li>user can delete there order  </li>
-<li>user can Review our product </li>
 <li>user can sign up with google and email and password </li>
-<li>Admin has authority to add product </li>
+<li> uploade your any ride</li>
 
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open live privew : https://fantasy-tourism.web.app/ to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
