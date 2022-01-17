@@ -1,10 +1,28 @@
-# Fantasy kingdom theme park
+# Website mockup with different devices
+<img src="https://i.ibb.co/2KW8BkZ/download-1.png" />
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## i use in this web site firebase ,mongodb,heroku react js and local language 
 
-In the project directory, you can run:
+# This is the Automobile car company.
+## techonology are uses 
+<li> JavaScript</li>
+<li> React.js</li>
+<li> Bootstrap </li>
+<li> Node.js</li>
+<li> Mongo DB</li>
+<li> Html</li>
+<li> CSS</li>
+<li> Firebase</li>
+
+
+
+
+## user experience by exploring this web
+<li>user can buy car </li>
+<li>user can delete there order  </li>
+<li>user can Review our product </li>
+<li>user can sign up with google and email and password </li>
+<li>Admin has authority to add product </li>
 
 ### `npm start`
 
